@@ -1,37 +1,29 @@
-import java.util.*;
-
-public class Colonna extends Ascensore {
-	
-	//CAMPI
-	private Ascensore ascensore;
-	private Vector<Piano> piani;
-
-	//COSTRUTTORE
-	public Colonna(Ascensore a) {
-		this.ascensore = a;
-		piani = new Vector<Piano>();
-	}
-
-
-	//METODI
-	public void muoviAscensore(int prossimoPiano) {
+import java.util.Vector;
+public class Colonna{
+		private Ascensore ascensore;
+		private Piano pianocorrente;
+		private Vector <Piano> lista;
 		
-	}
-
-	public Piano piano() {
-		return this.pianoCorrente;
-	}
-
-	public int nrPiano() {
-		return pianoCorrente.numero();
-	}
-
-	public void movimentaPersone() {
-		for (Persona x : utenti) {
-			if(x.destinazione() == pianoCorrente.numero())
-				super.remove(x);
+		public Colonna(Ascensore a){
+			ascensore=a;
+			lista=new Vector <Piano> ();
+			pianocorrente=null;
 		}
-	}
-
-	//Metodi aggiuntivi...
+		public void addPiano(Piano p){
+			lista.add(p);
+			if(pianocorrente==null)
+				pianocorrente=p;
+		}
+		public void muoviAscensore(int prossimoPiano){
+			for(Piano p:lista)
+				if(p.getNumero()==prossimoPiano)
+				pianocorrente=p;
+		}
+		public Piano piano(){
+			return pianocorrente;
+		}
+		public int nrPiano(){
+			return pianocorrente.getNumero();
+		}
+		
 }
