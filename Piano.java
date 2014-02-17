@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Piano {
 	
 	//CAMPI
@@ -20,8 +22,7 @@ public class Piano {
 	}
 
 	public boolean sale(int i, Ascensore a) {
-		a.sale(this.persona(i));
-		if (a.sale() == true)
+		if (a.sale(this.persona(i)))
 			personeInAttesa.remove(i);
 	}
 

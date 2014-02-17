@@ -1,9 +1,16 @@
+import java.util.*;
+
 public class Colonna extends Ascensore {
 	
 	//CAMPI
-
+	private Ascensore ascensore;
+	private Vector<Piano> piani;
 
 	//COSTRUTTORE
+	public Colonna(Ascensore a) {
+		this.ascensore = a;
+		piani = new Vector<Piano>();
+	}
 
 
 	//METODI

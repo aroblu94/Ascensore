@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Persona {
 	
 	//CAMPI
@@ -5,7 +7,7 @@ public class Persona {
 	private int destinazione;
 
 	//COSTRUTTORE
-	public Persona(double p, int d) {
+	public Persona(int p, int d) {
 		peso = p;
 		destinazione = d;
 	}
@@ -20,7 +22,7 @@ public class Persona {
 	}
 
 	public String toString() {
-		return "Peso: " + peso + "kg - Destinazione: piano " + destinazione);
+		return ("Peso: " + peso + "kg - Destinazione: piano " + destinazione);
 	}
 
 }
