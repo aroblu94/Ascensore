@@ -7,7 +7,7 @@ public class Piano {
 	//COSTRUTTORE
 	public Piano (int n) {
 		numero = n;
-		personeInAttesa = new Vector<Persone>;
+		personeInAttesa = new Vector<Persone>();
 	}
 
 	//METODI

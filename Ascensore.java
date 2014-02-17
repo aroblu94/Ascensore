@@ -2,11 +2,11 @@ public class Ascensore {
 
 	//CAMPI
 	private int personeMax;
-	private double pesoMax;
+	private int pesoMax;
 	private Vector<Persona> utenti;
 
 	//COSTRUTTORE
-	public Ascensore (int maxPersone, double maxPeso) {
+	public Ascensore (int maxPersone, int maxPeso) {
 		personeMax = maxPersone;
 		pesoMax = maxPeso;
 		utenti = new Vector<Persona>;
@@ -14,7 +14,7 @@ public class Ascensore {
 
 	//METODI
 	public boolean sale(Persona p) {
-		if (capienzaAttuale < personeMax || (pesoAttuale + p.peso()) <= pesoMax) {
+		if (!this.isPieno() && (pesoAttuale + p.peso()) <= pesoMax) {
 			utenti.add(Persona p);
 			return true;
 		}
@@ -26,5 +26,15 @@ public class Ascensore {
 	}
 
 	//Metodi aggiuntivi...
+	public boolean isEmpty() {
+		return utenti.isEmpty();
+	}
+
+	public boolean isPieno() {
+		if(utenti.size() < personeMax)
+			return false;
+		else
+			return true;
+	}
 
 }

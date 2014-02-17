@@ -1,7 +1,7 @@
 public class Persona {
 	
 	//CAMPI
-	private double peso;
+	private int peso;
 	private int destinazione;
 
 	//COSTRUTTORE
@@ -17,6 +17,10 @@ public class Persona {
 
 	public int destinazione() {
 		return this.destinazione;
+	}
+
+	public String toString() {
+		return "Peso: " + peso + "kg - Destinazione: piano " + destinazione);
 	}
 
 }
