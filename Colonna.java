@@ -35,9 +35,11 @@ public class Colonna {
 	}
 
 	public void movimentaPersone() {
-		for(Persona a : ascensore.getVettore()) {
-			if(a.getDestinazione() == this.nrPiano())
-				ascensore.scende(a);
+		for(int j = 0; j < ascensore.getVettore().size(); j++) {
+			if(ascensore.getVettore().elementAt(j).getDestinazione() == nrPiano()) {
+				ascensore.scende(ascensore.getVettore().elementAt(j));
+				j--;
+			}
 		}
 		for(int i = 0; i < pianocorrente.quante(); i++) {
 			if (pianocorrente.sale(i, ascensore))
